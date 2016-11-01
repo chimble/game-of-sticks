@@ -7,17 +7,20 @@ def choose_number():
             continue
 
 def initial_sticks():
-    return 20
+    num_sticks = input("Choose a number of sticks")
+    return int(num_sticks)
 
 def current_sticks(initial_sticks, chosen_numbers):
     current_count = initial_sticks - chosen_numbers
     return current_count
+
 
 def main():
     print("Welcome to the Game of Sticks!")
     turn_counter = 0
     chosen_numbers = 0
     num_sticks = initial_sticks()
+    print("There are {} sticks on the board.".format(num_sticks))
     while True:
         if (turn_counter + 1) % 2 == 1:
             print("It's your turn, Player 1")
@@ -26,6 +29,9 @@ def main():
             stick_count = current_sticks(num_sticks, chosen_numbers)
             turn_counter += 1
             print("There are {} sticks left".format(stick_count))
+            if stick_count <= 0:
+                print("You lose! Player 2 WINS!")
+                break
         elif (turn_counter + 1) % 2 == 0:
             print("It's your turn, Player 2")
             number = choose_number()
@@ -33,6 +39,8 @@ def main():
             stick_count = current_sticks(num_sticks, chosen_numbers)
             turn_counter += 1
             print("There are {} sticks left".format(stick_count))
-    return chosen_numbers
+            if stick_count <= 0:
+                print("You lose! Player 1 WINS!")
+                break
 
 main()
