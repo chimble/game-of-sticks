@@ -1,25 +1,35 @@
 def choose_number():
     while True:
-        number = input("Please choose 1 to 3 sticks to remove.")
+        number = input("Please choose 1 to 3 sticks to remove. ")
         if number in ['1', '2', '3']:
             return int(number)
         else:
             continue
 
 def initial_sticks():
-    num_sticks = input("Choose a number of sticks")
+    num_sticks = input("Choose a number of sticks ")
     return int(num_sticks)
 
 def current_sticks(initial_sticks, chosen_numbers):
     current_count = initial_sticks - chosen_numbers
     return current_count
 
+def possible_stick_nums(num_sticks):
+    return range(num_sticks)
+
+def ai_choice(stick_count, information):
+
+    random.choice()
+
 
 def main():
+    information = 
     print("Welcome to the Game of Sticks!")
     turn_counter = 0
     chosen_numbers = 0
     num_sticks = initial_sticks()
+    hatlist = possible_stick_nums(num_sticks)
+    information =
     print("There are {} sticks on the board.".format(num_sticks))
     while True:
         if (turn_counter + 1) % 2 == 1:

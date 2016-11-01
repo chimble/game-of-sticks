@@ -1,0 +1,29 @@
+Design of Game of Sticks Using Pseudocode
+
+Classes:
+    Game:
+        initialize number of sticks from input
+
+    AI
+    Hat:
+        Attributes:
+            initial number of sticks (int)
+            previous hat feedback (list of tuples)
+
+        [(1, [1,2,3]), (2, [1,2,3]), (3, [1,2,3]), (4, [1, 2, 3]).....]
+        if list[-1][0] < initial_sticks, extend list with tuples
+        initial_sticks - list[-1][0] = number need to add. get range((list[-1][0]+1), initial_sticks)
+        for each # in range, create (#, [1,2,3]) and extend list with it.
+
+        for each turn, remember index position of relevant tuple, and what output was
+
+        for a given turn, get random.choice(list[current_sticks - 1][1])
+        create variable: possible additions or subtractions (paos)= [(current_sticks - 1), random output]
+
+        if ai wins:
+            list[(paos[0])][1].extend(paos[1]*2)
+            list[(paos[2])]
+            list[(paos[4])]
+
+        elif ai loses:
+            if list[(paos[0])][1] remove(random output)
