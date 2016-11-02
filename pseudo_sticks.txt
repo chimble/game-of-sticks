@@ -2,11 +2,21 @@ Design of Game of Sticks Using Pseudocode
 
 Classes:
     Game:
-        initialize number of sticks from input
-
+        initialize number of sticks from input (int)
+        figure out if playing pvp or pvAI (str)
+        first player is prompted with starting number of sticks
+        told to remove 1-3 (int)
+        then player two is told the updated amount of sticks (str with int)
+        until the last stick is removed, this continues (while sticks >0)
+        when last stick is removed, the game ends (lose())
+        says who won and asks if you want to replay (replay())
     AI
-    Hat:
-        Attributes:
+        needs to have chance to guess 1-3 at random
+        keep track of all guesses for a game
+        need to add or remove guesses from hat list based on w/l 
+    Hat
+
+    Attributes:
             initial number of sticks (int)
             previous hat feedback (list of tuples)
 
