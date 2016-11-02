@@ -20,7 +20,7 @@ Classes:
         ask to rerun game
         if rerun, use updated hatlist to help the AI 'learn'
     Hat
-        
+
     Attributes:
             initial number of sticks (int)
             previous hat feedback (list of tuples)
@@ -49,3 +49,5 @@ Classes:
     Errorcatching
 
     Nosetests
+
+    List of actors
