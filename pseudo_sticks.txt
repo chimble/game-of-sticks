@@ -9,13 +9,18 @@ Classes:
         then player two is told the updated amount of sticks (str with int)
         until the last stick is removed, this continues (while sticks >0)
         when last stick is removed, the game ends (lose())
-        says who won and asks if you want to replay (replay())
+        says who won and asks if you want to replay (replay)
     AI
-        needs to have chance to guess 1-3 at random
+        replaces a player in the game
+        initialize hatlist
+        needs to have chance to guess 1-3 at random from each possible stickcount
         keep track of all guesses for a game
-        need to add or remove guesses from hat list based on w/l 
+        see if win/lose
+        need to add or remove guesses from hat list based on w/l
+        ask to rerun game
+        if rerun, use updated hatlist to help the AI 'learn'
     Hat
-
+        
     Attributes:
             initial number of sticks (int)
             previous hat feedback (list of tuples)
@@ -31,9 +36,16 @@ Classes:
         create variable: possible additions or subtractions (paos)= [(current_sticks - 1), random output]
 
         if ai wins:
+            add back two of each winning choice to each hat
             list[(paos[0])][1].extend(paos[1]*2)
             list[(paos[2])]
             list[(paos[4])]
 
         elif ai loses:
+            remove the losing chose from each hat
             if list[(paos[0])][1] remove(random output)
+
+
+    Errorcatching
+
+    Nosetests
